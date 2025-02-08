@@ -23,85 +23,64 @@ body {
 }
 
 @keyframes moveBackground {
-    0% {
-        transform: translate(-20%, -20%);
-    }
-    50% {
-        transform: translate(20%, 20%);
-    }
-    100% {
-        transform: translate(-20%, -20%);
-    }
+    0% { transform: translate(-20%, -20%); }
+    50% { transform: translate(20%, 20%); }
+    100% { transform: translate(-20%, -20%); }
 }
 
-header {
-    background: rgba(30, 30, 30, 0.8);
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    backdrop-filter: blur(10px);
-    z-index: 2;
-}
+.container { position: relative; z-index: 2; }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+.input-container, .chat-container { display: flex; justify-content: center; margin-top: 20px; }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-ul li {
-    margin: 0 15px;
-}
-
-ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    padding: 80px 20px 50px;
-    position: relative;
-    z-index: 2;
-}
-
-.input-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-input {
-    padding: 10px;
+.chat-container {
+    display: none;
+    flex-direction: column;
     width: 60%;
+    margin: auto;
+    height: 70vh;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: #6200ea;
+    align-self: flex-end;
+}
+
+.ai-message {
+    background: #333;
+    align-self: flex-start;
+}
+
+input, button {
+    padding: 10px;
     border: none;
     border-radius: 5px;
     outline: none;
 }
 
+input { width: 60%; }
+
 button {
-    padding: 10px 20px;
     margin-left: 10px;
-    border: none;
-    border-radius: 5px;
     background: #6200ea;
     color: #fff;
     cursor: pointer;
 }
 
-button:hover {
-    background: #3700b3;
+button:hover { background: #3700b3; }
+
+.chat-input-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }

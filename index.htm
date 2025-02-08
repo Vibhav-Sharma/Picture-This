@@ -1,27 +1,23 @@
 <html>
 <head>
-    <title>Picture-This</title>
+    <title>Picture This - AI Image Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="animated-bg"></div>
-    <header>
-        <nav>
-            <div class="logo">Picture-This</div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Turn your ideas into images</h1>
-        <p>Describe your idea, and let us create an image for you.</p>
-        <div class="input-container">
-            <input type="text" placeholder="Enter your prompt here...">
-            <button>Generate</button>
+    <div class="container">
+        <div class="input-container" id="inputBox">
+            <input type="text" id="userPrompt" placeholder="Enter your prompt here...">
+            <button onclick="startChat()">Generate</button>
         </div>
-    </main>
+        <div class="chat-container" id="chatBox"></div>
+        <div class="chat-input-container" id="chatInputBox" style="display: none;">
+            <input type="text" id="chatInput" placeholder="Enter modifications...">
+            <button onclick="modifyImage()">Submit</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
+
