@@ -90,10 +90,20 @@ The application will be available at http://localhost:3000
 
 ## Usage
 1. Register or log in with Google authentication
-2. Enter a text prompt describing the image you want to generate
+2. Enter a text prompt describing the image you want to generate (e.g. "car")
 3. Wait for the AI to generate your image
-4. Continue entering new prompts to build upon your previous image
-5. Use "modify:" prefix to make specific changes to the previous image
+4. Enter a second prompt (e.g. "black") - it will be automatically combined with the previous prompts to create "car black"
+5. Enter a third prompt (e.g. "with red accents") - it will combine all previous inputs to create "car black with red accents"
+6. Each new prompt builds on all previous prompts, allowing you to gradually refine your image
+7. Use "modify:" prefix to make specific changes that replace rather than add to the previous image
+
+### Prompting Examples:
+- First prompt: "car" → Generates an image of a car
+- Second prompt: "black" → Combines to "car black" and generates a black car
+- Third prompt: "with red accents" → Combines to "car black with red accents"
+- Using "modify:blue instead of black" → Replaces the previous prompt chain with a new direction
+
+This cumulative prompting approach allows you to build on your ideas sequentially without having to retype previous descriptions.
 
 ## License
 This project is licensed under the MIT License.
