@@ -3,27 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picture This - AI Image Generator</title>
+    <title>Picture This</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="animated-bg"></div>
+    <button id="logoutButton" style="display: none;">Logout</button>
+    
     <div class="container">
-        <button id="loginButton">Login with Google</button>
-
-        <div class="input-container" id="inputBox">
-            <input type="text" id="userPrompt" placeholder="Enter your prompt here...">
-            <button onclick="startChat()">Generate</button>
+        <div id="authContainer" class="auth-container">
+            <div class="auth-form">
+                <h2>Sign In / Register</h2>
+                <div id="authError" class="auth-error" style="display: none;"></div>
+                <form id="authForm">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <div class="auth-buttons">
+                        <button type="button" id="loginButton">Sign In</button>
+                        <button type="button" id="registerButton">Register</button>
+                        <a href="/auth/google" class="google-btn">Sign in with Google</a>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div class="chat-container" id="chatBox"></div>
-
-        <div class="chat-input-container" id="chatInputBox" style="display: none;">
-            <input type="text" id="chatInput" placeholder="Enter modifications...">
-            <button onclick="modifyImage()">Submit</button>
+        
+        <div id="mainContent" style="display: none;">
+            <div class="header">
+                <h1>Picture This</h1>
+                <p>AI-powered image generation</p>
+            </div>
+            
+            <div class="input-hint">
+                Tip: Type "modify:" followed by what you want to change. Each modification builds on previous prompts!
+            </div>
+            
+            <div id="chatBox" class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                
+                <div class="chat-input-area">
+                    <input type="text" id="userPrompt" placeholder="Describe the image you want to generate...">
+                    <button onclick="startChat()" id="generateButton"><i class="fas fa-magic"></i></button>
+                </div>
+            </div>
         </div>
     </div>
-
+    
     <script type="module" src="script.js"></script>
 </body>
 </html>
